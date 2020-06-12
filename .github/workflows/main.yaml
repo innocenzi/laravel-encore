@@ -8,8 +8,7 @@ jobs:
       fail-fast: true
       matrix:
         php: [7.4]
-        laravel: [^7.0]
-    name: Laravel ${{ matrix.laravel }} and PHP ${{ matrix.php }}
+    name: PHP ${{ matrix.php }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
