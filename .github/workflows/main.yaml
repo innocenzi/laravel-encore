@@ -9,7 +9,7 @@ jobs:
       matrix:
         php: [7.4]
         laravel: [^7.0]
-    name: Laravel {{ matrix.laravel }} and PHP {{ matrix.php }}
+    name: Laravel ${{ matrix.laravel }} and PHP ${{ matrix.php }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -22,8 +22,6 @@ jobs:
           ${{ matrix.env }}
           composer config discard-changes true
           composer self-update
-          composer require --dev "laravel/framework:${LARAVEL_VERSION}" --no-interaction --no-update
-          composer require --dev "orchestra/testbench:${TESTBENCH_VERSION}" --no-interaction --no-update
-          composer update ${{ matrix.composer-flags }} --prefer-dist --no-suggest --no-interaction
+          composer update --prefer-dist --no-suggest --no-interaction
       - name: Run PHPUnit
         run: php vendor/bin/phpunit --verbose
