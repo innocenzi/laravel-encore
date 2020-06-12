@@ -1,0 +1,53 @@
+{
+  "name": "innocenzi/laravel-encore",
+  "description": "Integrate Webpack Encore in Laravel.",
+  "keywords": [
+    "innocenzi",
+    "laravel-encore"
+  ],
+  "homepage": "https://github.com/innocenzi/laravel-encore",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Enzo Innocenzi",
+      "email": "enzo@innocenzi.dev",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "illuminate/support": "^7.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.0",
+    "phpunit/phpunit": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Innocenzi\\LaravelEncore\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Innocenzi\\LaravelEncore\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": ".\\vendor\\bin\\phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Innocenzi\\LaravelEncore\\EncoreServiceProvider"
+      ],
+      "aliases": {
+        "Encore": "Innocenzi\\LaravelEncore\\Facade\\Encore"
+      }
+    }
+  }
+}
