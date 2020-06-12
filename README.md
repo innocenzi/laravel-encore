@@ -10,7 +10,7 @@
     </a>
     &nbsp;
     <a href="https://github.com/innocenzi/laravel-encore/actions">
-      <img alt="Build" src="https://github.com/innocenzi/laravel-encore/workflows/main/badge.svg" />
+      <img alt="Build" src="https://github.com/innocenzi/laravel-encore/workflows/CI/badge.svg" />
     </a>
   </p>
 </p>
