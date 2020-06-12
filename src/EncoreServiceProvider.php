@@ -4,6 +4,7 @@ namespace Innocenzi\LaravelEncore;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Innocenzi\LaravelEncore\Commands\SetupEncoreCommand;
 
 class EncoreServiceProvider extends ServiceProvider
 {
@@ -36,7 +37,9 @@ class EncoreServiceProvider extends ServiceProvider
             ], 'lang');*/
 
             // Registering package commands.
-            // $this->commands([]);
+            $this->commands([
+                SetupEncoreCommand::class,
+            ]);
         }
     }
 
