@@ -2,8 +2,11 @@
   "name": "innocenzi/laravel-encore",
   "description": "Integrate Webpack Encore in Laravel.",
   "keywords": [
-    "innocenzi",
-    "laravel-encore"
+    "laravel-encore",
+    "symfony",
+    "laravel",
+    "webpack encore",
+    "laravel mix"
   ],
   "homepage": "https://github.com/innocenzi/laravel-encore",
   "license": "MIT",
