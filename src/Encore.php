@@ -9,6 +9,14 @@ use Illuminate\Support\HtmlString;
 class Encore
 {
     /**
+     * Reads a JSON file.
+     */
+    protected function readJsonFile(string $file)
+    {
+        return \json_decode(\file_get_contents($this->getBuildPath($file)), true);
+    }
+
+    /**
      * Get the build path.
      */
     protected function getBuildPath(string $file = ''): string
@@ -27,7 +35,7 @@ class Encore
      */
     protected function getEntries(string $entryName, string $entryType, callable $format): ?Htmlable
     {
-        ['entrypoints' => $entrypoints ] = \json_decode(\file_get_contents($this->getBuildPath('entrypoints.json')), true);
+        ['entrypoints' => $entrypoints ] = $this->readJsonFile(\config('encore.files.entrypoints'));
 
         if (!($entries = Arr::get($entrypoints, "$entryName.$entryType"))) {
             return null;
@@ -49,7 +57,7 @@ class Encore
     /**
      * Get the HTML tags required to import the scripts.
      */
-    public function getScriptTags(string $entryName, bool $noDefer): ?Htmlable
+    public function getScriptTags(string $entryName, bool $noDefer = false): ?Htmlable
     {
         return $this->getEntries($entryName, 'js', function (string $link) use ($noDefer) {
             return sprintf('<script src="%s" %s></script>', $link, $noDefer ?: 'defer');
@@ -61,8 +69,6 @@ class Encore
      */
     public function asset(string $path): ?string
     {
-        $data = \json_decode(\file_get_contents($this->getBuildPath('manifest.json')), true);
-
-        return Arr::get($data, $path) ?? $path;
+        return Arr::get($this->readJsonFile(\config('encore.files.manifest')), $path) ?? $path;
     }
 }
