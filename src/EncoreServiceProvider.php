@@ -16,25 +16,14 @@ class EncoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (\class_exists(\Statamic\Statamic::class)) {
+            \Innocenzi\LaravelEncore\Tags\Encore::register();
+        }
+
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/config.php' => config_path('encore.php'),
             ], 'config');
-
-            // Publishing the views.
-            /*$this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-encore'),
-            ], 'views');*/
-
-            // Publishing assets.
-            /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/laravel-encore'),
-            ], 'assets');*/
-
-            // Publishing the translation files.
-            /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/laravel-encore'),
-            ], 'lang');*/
 
             // Registering package commands.
             $this->commands([

@@ -24,7 +24,8 @@
   },
   "require-dev": {
     "orchestra/testbench": "^5.0",
-    "phpunit/phpunit": "^9.0"
+    "phpunit/phpunit": "^9.0",
+    "statamic/statamic": "dev-master"
   },
   "autoload": {
     "psr-4": {
@@ -43,7 +44,12 @@
   "config": {
     "sort-packages": true
   },
+  "minimum-stability": "dev",
   "extra": {
+    "statamic": {
+      "name": "Laravel Encore",
+      "description": "Integrates Webpack Encore with Statamic."
+    },
     "laravel": {
       "providers": [
         "Innocenzi\\LaravelEncore\\EncoreServiceProvider"
