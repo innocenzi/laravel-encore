@@ -16,7 +16,7 @@ class EncoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (\class_exists(\Statamic\Statamic::class)) {
+        if (\class_exists(\Statamic\Statamic::class) && !$this->app->environment('testing')) {
             \Innocenzi\LaravelEncore\Tags\Encore::register();
         }
 
