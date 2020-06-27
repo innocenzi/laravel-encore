@@ -50,7 +50,7 @@ class Encore
     public function getLinkTags(string $entryName): ?Htmlable
     {
         return $this->getEntries($entryName, 'css', function (string $link) {
-            return sprintf('<link ref="stylesheet" href="%s"/>', $link);
+            return sprintf('<link rel="stylesheet" href="%s"/>', $link);
         });
     }
 

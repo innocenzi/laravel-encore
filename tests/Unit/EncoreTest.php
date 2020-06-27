@@ -55,7 +55,7 @@ class EncoreTest extends TestCase
         Encore::makePartial();
 
         $this->assertEquals(
-            '<link ref="stylesheet" href="/build/app.css"/><link ref="stylesheet" href="/build/admin.css"/>',
+            '<link rel="stylesheet" href="/build/app.css"/><link rel="stylesheet" href="/build/admin.css"/>',
             Encore::getLinkTags('app')
         );
     }
