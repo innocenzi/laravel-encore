@@ -22,5 +22,5 @@ jobs:
           composer config discard-changes true
           composer self-update
           composer update --prefer-dist --no-suggest --no-interaction
-      - name: Run PHPUnit
-        run: php vendor/bin/phpunit --verbose
+      - name: Run tests
+        run: php vendor/bin/pest --verbose
