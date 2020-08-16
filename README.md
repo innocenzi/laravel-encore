@@ -29,16 +29,12 @@ composer require innocenzi/laravel-encore
 
 ### Automatically
 
-> Note: this command will only stay until I make a proper preset.
-
-Run the `encore:setup` command:
-
 ```shell
-php artian encore:setup
+npx use-preset innocenzi/laravel-encore-preset
 ```
 
 This command will update your `package.json` and `.gitignore`, remove your `webpack.mix.js` and add a `webpack.config.js`.
-You'll have to install your new dependencies with `npm install`. You'll also need to include your CSS, either in your Javascript file, or by adding it to Webpack Encore.
+You'll need to include your CSS manually, either in your Javascript file, or by adding it to Webpack Encore.
 
 ### Manually
 
