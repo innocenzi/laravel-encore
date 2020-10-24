@@ -15,10 +15,6 @@ class EncoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (\class_exists(\Statamic\Statamic::class) && !$this->app->environment('testing')) {
-            \Innocenzi\LaravelEncore\Tags\Encore::register();
-        }
-
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/config.php' => config_path('encore.php'),
