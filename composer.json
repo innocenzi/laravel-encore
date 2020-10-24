@@ -19,11 +19,11 @@
     }
   ],
   "require": {
-    "php": "^7.2",
-    "illuminate/support": "^7.0"
+    "php": "^7.4",
+    "illuminate/support": "^7.0|^8.0"
   },
   "require-dev": {
-    "orchestra/testbench": "^5.0",
+    "orchestra/testbench": "^6.2",
     "pestphp/pest": "^0.2.4",
     "phpunit/phpunit": "^9.0",
     "statamic/statamic": "dev-master"
