@@ -17,6 +17,8 @@
 
 This package helps integrating [Webpack Encore](https://symfony.com/doc/current/frontend/encore) with Laravel.
 
+> **Note**: while this package should work, I'm not planning on fixing potential issues or updating it, since I'm no longer using it. If you want a better development environment, consider [Laravel Vite](https://github.com/innocenzi/laravel-vite).
+
 ## Installation
 
 You can install the package via composer:
